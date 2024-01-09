@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:islami_two/ui/MyThemeData.dart';
 import 'package:islami_two/ui/home/hadeth/Hadeth_Tab.dart';
 import 'package:islami_two/ui/home/quaran/Quaran_tab.dart';
 import 'package:islami_two/ui/home/radio/Radio_Tab.dart';
+import 'package:islami_two/ui/home/settings/Settings_Tab.dart';
 import 'package:islami_two/ui/home/tasbeh/Tasbeh_Tab.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,7 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/main_background.png'),
+                image: AssetImage(MyThemeData.isDarkEnabled
+                    ? 'assets/images/main_background_dark.png'
+                    : 'assets/images/main_background.png'),
                 fit: BoxFit.fill)),
         child: Scaffold(
           appBar: AppBar(
@@ -49,6 +53,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/icon_radio.png')),
                   label: 'Radio'),
+              BottomNavigationBarItem(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  icon: Icon(Icons.settings),
+                  label: 'Settings'),
             ],
           ),
           body: tabs[selectedTabIndex],
@@ -60,5 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
     HadethTab(),
     TasbehTab(),
     RadioTab(),
+    SettingsTab(),
   ];
 }

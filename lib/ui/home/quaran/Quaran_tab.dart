@@ -127,6 +127,10 @@ class QuaranTab extends StatelessWidget {
           flex: 1,
           child: Image.asset('assets/images/quaran_header.png'),
         ),
+        Text(
+          'ChapterName',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
         Expanded(
           flex: 3,
           child: ListView.separated(
@@ -134,13 +138,13 @@ class QuaranTab extends StatelessWidget {
                 return ChapterTitleWidget(names[index], index);
               },
               separatorBuilder: (context, index) => Container(
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).disabledColor,
                     width: double.infinity,
                     height: 2,
                     margin: EdgeInsets.symmetric(horizontal: 64),
                   ),
               itemCount: names.length),
-        )
+        ),
       ],
     );
   }
