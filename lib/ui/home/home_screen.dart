@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami_two/ui/home/hadeth/Hadeth_Tab.dart';
 import 'package:islami_two/ui/home/quaran/Quaran_tab.dart';
 import 'package:islami_two/ui/home/radio/Radio_Tab.dart';
 import 'package:islami_two/ui/home/tasbeh/Tasbeh_Tab.dart';
@@ -57,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> tabs = [
     QuaranTab(),
-    HadethTab(),
+   // HadethTab(),
     TasbehTab(),
     RadioTab(),
   ];

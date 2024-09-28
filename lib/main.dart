@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami_two/ui/chapterDetailes/ChapterDetailesScreen.dart';
-import 'package:islami_two/ui/hadeth_detailes/HadethDetailesScreen.dart';
 import 'package:islami_two/ui/home/home_screen.dart';
 
 void main() {
@@ -14,6 +14,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('es'), // Spanish
+      ],
       theme: ThemeData(
         cardTheme: CardTheme(
             surfaceTintColor: Colors.white,
@@ -48,7 +57,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName: (_) => HomeScreen(),
         ChapterDetailesScreen.routeName: (_) => ChapterDetailesScreen(),
-        HadethDetailesScreen.routeName: (_) => HadethDetailesScreen(),
+        // HadethDetailesScreen.routeName: (_) => HadethDetailesScreen(),
       },
     );
   }
