@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
               color: Colors.black,
             ),
             titleTextStyle: TextStyle(color: Colors.black, fontSize: 28)),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
             selectedItemColor: Colors.black,
             unselectedItemColor: Colors.white,
             selectedIconTheme: IconThemeData(
